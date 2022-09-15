@@ -1,0 +1,14 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "final assigment for unit test class",
+  "main": "y",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Victor Grinan",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.0.3"
+  }
+}

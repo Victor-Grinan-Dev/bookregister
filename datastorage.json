@@ -1,0 +1,82 @@
+[
+    {
+      "bookNumber": 1,
+      "bookname": "Maria and My",
+      "writer": "Antony Lee",
+      "price": 200,
+      "rating": "****",
+      "genres": [
+        "textbook",
+        "chronic",
+        "fiction"
+      ],
+      "extras": {
+        "type": "magazine",
+        "comments": "first folio",
+        "edition": "fourth edition"
+      }
+    },
+    {
+      "bookNumber": 2,
+      "bookname": "The adventures of Mike the Millipede",
+      "writer": "Antony Lee",
+      "price": 200,
+      "rating": "***",
+      "genres": [
+        "fiction",
+        "humorous essay",
+        "poem"
+      ],
+      "extras": {
+        "type": "pocketbook",
+        "comments": "no comments",
+        "edition": "seventh edition"
+      }
+    },
+    {
+      "bookNumber": 3,
+      "bookname": "NoSql - New Hope",
+      "writer": "Antony Lee",
+      "price": 10,
+      "rating": "***",
+      "genres": [
+        "poem",
+        "chronic",
+        "humorous essay"
+      ],
+      "extras": {
+        "type": "hardcover",
+        "comments": "special edition",
+        "edition": "fift edition"
+      }
+    },
+    {
+      "bookNumber": 4,
+      "bookname": "SQL-mysteries",
+      "writer": "Antony Lee",
+      "price": 10,
+      "rating": "*****",
+      "genres": [
+        "humorous essay",
+        "poem",
+        "short story"
+      ],
+      "extras": {
+        "type": "pocketbook",
+        "comments": "collectors edition",
+        "edition": "third edition"
+      }
+    },
+    {
+      "bookNumber": 5,
+      "bookname": "SQL-mysteries",
+      "writer": "Emily White",
+      "price": 36,
+      "rating": "****",
+      "genres": [
+        "fiction",
+        "poem",
+        "humorous essay"
+      ]
+    }
+  ]
