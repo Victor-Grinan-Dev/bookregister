@@ -19,6 +19,7 @@ describe("Testing the constructor", ()=>{
     });
 });
 
+//method 1
 describe('Test get_total_price_of_books_by_writer', ()=>{
 
     const bookRegister = new register(books);
@@ -33,7 +34,7 @@ describe('Test get_total_price_of_books_by_writer', ()=>{
         });
     });
 
-
+    
     describe('not found parameter', ()=>{
 
         const testParams = ["Victor Grinan", 1, true,];
@@ -51,9 +52,46 @@ describe('Test get_total_price_of_books_by_writer', ()=>{
     });
 });
 
+//method 2
 describe('Test get_All_books_By_writer', ()=>{
 
+    const bookRegister = new register(books);
+
+    describe('succesful return', ()=>{
+
+        const expectedValues1 = [
+            'Maria and My',
+            'The adventures of Mike the Millipede',
+            'NoSql - New Hope',
+            'SQL-mysteries'
+          ];
+
+        test('"Antony Lee" returns array of 4 string items', ()=>{
+            expect(bookRegister.get_All_books_By_writer("Antony Lee")).toEqual(expectedValues1);
+        });
+
+        const expectedValues2 = [ 'SQL-mysteries' ];
+
+        test('"Emily White" returns returns array of 1 string items', ()=>{
+            expect(bookRegister.get_All_books_By_writer("Emily White")).toEqual(expectedValues2);
+        });
+    });
     
+    describe('not found parameter', ()=>{
+
+        const testParams = ["Victor Grinan", 1, true,];
+
+        //TODO: fix place holder for any datatype X%
+        test.each(testParams)(`testing each item from testParams`, (item) => {
+            expect(bookRegister.get_All_books_By_writer(item)).toEqual([]);
+        });
+    });
+
+    describe('missing parameter', ()=>{
+        test('bookRegister.get_All_books_By_writer() throws error "missing parameter"', ()=>{
+            expect(() => bookRegister.get_All_books_By_writer()).toThrow("missing parameter");
+        });
+    });
 });
 
 /*
