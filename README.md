@@ -1,6 +1,6 @@
 # BookRegister version 1.0.0
 
-Is the final assigment of Unit Test class for the course React22K of Helsinki Bussisnes Collage, made by Victor Griñán.
+BookRegister is the final assigment of Unit Test class for the course React22K of Helsinki Bussisnes Collage, made by Victor Griñán.
 
 ## Steps
 
