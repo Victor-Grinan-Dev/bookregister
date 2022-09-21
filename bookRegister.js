@@ -2,15 +2,17 @@
 
 module.exports = class BookRegister {
     constructor(data){
-        if (!data) {
-            throw new Error('data storage missing');
-        }
-        this.data=data;
+        //if (!data) {
+        //    throw new Error('data storage missing');
+        //}
+        //this.data=data;
     }
 
     get_total_price_of_books_by_writer(searchValue){
-        if (!searchValue){
-            throw new Error('missing parameter');
+        if (!this.data){
+            throw new Error('no implementation');            
+        }else if (!searchValue){
+            throw new Error('missing parameter');   
         }else{
             let total = 0;
             for(let item of this.data){
@@ -26,7 +28,10 @@ module.exports = class BookRegister {
     }
 
     get_All_books_By_writer(searchValue){
-        if (!searchValue){
+        if (!this.data){
+            throw new Error('no implementation');
+        }
+        else if (!searchValue){
             throw new Error('missing parameter');
         }else{
             const books = [];
@@ -40,33 +45,41 @@ module.exports = class BookRegister {
     }
 
     get_extras(searchKey){
-        //note that the api do not have a throw task writen.
-        let extras;
-        for(let item of this.data){
-            if (item.bookNumber === searchKey){
-                if (item.extras){
-                return item.extras;
+        if (!this.data){
+
+            for(let item of this.data){
+                if (item.bookNumber === searchKey){
+                    if (item.extras){
+                    return item.extras;
+                    }
+                    return null; 
                 }
-                return null; 
             }
+            return null; 
         }
-        return null; 
     }
     get_Price(bookNumber){
-        for (let item of this.data){
-            if(item.bookNumber === bookNumber){
-                return item.price;
+        if (this.data){
+            for (let item of this.data){
+                if(item.bookNumber === bookNumber){
+                    return item.price;
+                }
             }
+            throw new Error('nothing found with given');
         }
-        throw new Error('nothing found with given');
+        
     }
+
     get_book_genres(searchKey){
-        //note that the api do not have a throw task writen.
-        for (let item of this.data){
-            if(item.bookNumber === searchKey){
-                return item.genres
+        if (this.data){
+            for (let item of this.data){
+                if(item.bookNumber === searchKey){
+                    return item.genres;
+                }
             }
+            return [];
+        }else{
+            throw new Error('how can this pass?')
         }
-        return []
     }
 } 
