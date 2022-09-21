@@ -132,9 +132,10 @@ describe('Test get_extras', ()=>{
 describe('Test get_Price', ()=>{
 
     describe('succesful return', ()=>{
-
         test.each(booksNumbers)('testing  %d', dataIndex =>{
-            expect(()=>bookRegister.get_Price(dataIndex).toEqual(books[dataIndex - 1].price));
+
+            expect(bookRegister.get_Price(dataIndex)).toEqual(books[dataIndex - 1].price);
+
         });
     });
 
@@ -165,7 +166,7 @@ describe('Test get_book_genres', ()=>{
         });
 
         test.each(booksNumbers)('testing  %d', dataIndex =>{
-            expect(()=>bookRegister.get_Price(dataIndex).toEqual(books[dataIndex - 1].genres));
+            expect(()=>bookRegister.get_book_genres(dataIndex).toEqual(books[dataIndex - 1].genres));
         });
     });
 

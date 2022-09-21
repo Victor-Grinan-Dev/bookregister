@@ -1,5 +1,19 @@
 # Test Cases for Constructor.
 
+## Test constructor with out implementation:
+
+```js
+ constructor(data){
+
+    }
+```
+
+fails the test:
+
+```shell
+FAIL  __test__/index.test.js
+```
+
 ## Test that the missing parameter throws an exception
 
 ```js
