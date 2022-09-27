@@ -7,4 +7,4 @@ const bookRegister = new register(books);
 //console.log(bookRegister.get_All_books_By_writer("Emily White"));
 //console.log(bookRegister.get_extras());
 //console.log(bookRegister.get_Price(1));
-console.log(bookRegister.get_book_genres(1));
+console.log(bookRegister.get_book_genres());

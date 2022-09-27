@@ -152,13 +152,13 @@ describe('Test get_Price', ()=>{
     });
 
     test('missing parameter throws "nothing found with given"', () => {
-         expect(() => bookRegister.get_Price()).toThrow('nothing found with given');
+         expect(()=>bookRegister.get_Price()).toThrow('nothing found with given');
     });
 });
 
 //method 5
 describe('Test get_book_genres', ()=>{
-
+    //this test only pass with arrow functions even if not throwing errors
     describe('succesful returns', ()=>{
 
         const booksNumbers = new Array(books.length).fill(1).map((value, i)=>{
@@ -174,15 +174,14 @@ describe('Test get_book_genres', ()=>{
         const testParams = ["Victor Grinan", "Antony Lee",  1, true];
 
         test.each(testParams)('testing  %s', param =>{
-            expect(()=>bookRegister.get_book_genres(param).toBe([]));
+            expect(()=>bookRegister.get_book_genres(param).toEqual([]));
         });
     });
 
 
-    test('testing missing parameter returns empty array [] ', () =>{
-        expect(()=>bookRegister.get_book_genres().toBe([]));
+    test('testing missing parameter returns empty array []', () => {
+        expect(()=>bookRegister.get_book_genres().toEqual([]));
     });
-   
 });
 
 

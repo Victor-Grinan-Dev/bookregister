@@ -2,16 +2,15 @@
 
 module.exports = class BookRegister {
     constructor(data){
-        //if (!data) {
-        //    throw new Error('data storage missing');
-        //}
-        //this.data=data;
+        if (!data) {
+            throw new Error('data storage missing');
+        }
+        this.data=data;
     }
 
     get_total_price_of_books_by_writer(searchValue){
-        if (!this.data){
-            throw new Error('no implementation');            
-        }else if (!searchValue){
+        
+        if (!searchValue){
             throw new Error('missing parameter');   
         }else{
             let total = 0;
@@ -24,14 +23,13 @@ module.exports = class BookRegister {
                 throw new Error('nothing found with given');
             }
             return total;
+            
         }
     }
 
     get_All_books_By_writer(searchValue){
-        if (!this.data){
-            throw new Error('no implementation');
-        }
-        else if (!searchValue){
+    
+        if (!searchValue){
             throw new Error('missing parameter');
         }else{
             const books = [];
@@ -41,45 +39,45 @@ module.exports = class BookRegister {
                 }
             }
             return books;
-        }
+        }  
     }
 
     get_extras(searchKey){
-        if (!this.data){
-
-            for(let item of this.data){
-                if (item.bookNumber === searchKey){
-                    if (item.extras){
-                    return item.extras;
-                    }
-                    return null; 
+        
+        for(let item of this.data){
+            if (item.bookNumber === searchKey){
+                if (item.extras){
+                return item.extras;
                 }
+                return null; 
             }
-            return null; 
         }
+        return null; 
+        
     }
     get_Price(bookNumber){
-        if (this.data){
-            for (let item of this.data){
-                if(item.bookNumber === bookNumber){
-                    return item.price;
-                }
+        
+        for (let item of this.data){
+            if(item.bookNumber === bookNumber){
+                return item.price;
             }
-            throw new Error('nothing found with given');
         }
+        throw new Error('nothing found with given');
         
     }
 
     get_book_genres(searchKey){
-        if (this.data){
-            for (let item of this.data){
-                if(item.bookNumber === searchKey){
-                    return item.genres;
-                }
-            }
-            return [];
-        }else{
-            throw new Error('how can this pass?')
-        }
+        return [];
     }
+    /**
+     
+
+        for (let item of this.data){
+            if(item.bookNumber === searchKey){
+                return item.genres;
+            }
+        }
+        return [];
+    }
+     */
 } 
