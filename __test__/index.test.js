@@ -40,7 +40,7 @@ describe('Test get_total_price_of_books_by_writer', ()=>{
     
     describe('not found parameter', ()=>{
 
-        const testParams = ["Victor Grinan", 1, true,];
+        const testParams = ["Victor Grinan"];
 
         //TODO: fix place holder for any datatype X%
         test.each(testParams)(`testing each item from booksNumbers`, (item) => {
@@ -147,7 +147,7 @@ describe('Test get_Price', ()=>{
                 6
             ];
         test.each(testParams)('testing  %d', param =>{
-            expect(()=>bookRegister.get_Price(param).toThrow('nothing found with given'));
+            expect(()=>bookRegister.get_Price(param)).toThrow('nothing found with given');
         });
     });
 
@@ -166,21 +166,21 @@ describe('Test get_book_genres', ()=>{
         });
 
         test.each(booksNumbers)('testing  %d', dataIndex =>{
-            expect(()=>bookRegister.get_book_genres(dataIndex).toEqual(books[dataIndex - 1].genres));
+            expect(bookRegister.get_book_genres(dataIndex)).toEqual(books[dataIndex - 1].genres);
         });
     });
 
     describe('Test not found parameter returns empty array []', ()=>{
-        const testParams = ["Victor Grinan", "Antony Lee",  1, true];
+        const testParams = [ 6, 7];
 
         test.each(testParams)('testing  %s', param =>{
-            expect(()=>bookRegister.get_book_genres(param).toEqual([]));
+            expect(bookRegister.get_book_genres(param)).toEqual([]);
         });
     });
 
 
     test('testing missing parameter returns empty array []', () => {
-        expect(()=>bookRegister.get_book_genres().toEqual([]));
+        expect(bookRegister.get_book_genres()).toEqual([]);
     });
 });
 
