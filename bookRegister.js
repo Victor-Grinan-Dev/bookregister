@@ -66,7 +66,7 @@ module.exports = class BookRegister {
                 return item.price;
             }
         }
-        throw new Error('nothing foundwith given');
+        throw new Error('nothing found with given');
         
     }
 
