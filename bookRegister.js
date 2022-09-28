@@ -2,15 +2,12 @@
 
 module.exports = class BookRegister {
 
-/*
     constructor(data){
         if (!data) {
             throw new Error('data storage missing');
         }
         this.data=data;
     }
-*/
-
 
     get_total_price_of_books_by_writer(searchValue){
            
