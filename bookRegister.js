@@ -12,7 +12,7 @@ module.exports = class BookRegister {
     get_total_price_of_books_by_writer(searchValue){
            
         if (!searchValue){
-            throw new Error('missingparameter');   
+            throw new Error('missing parameter');   
         }else{
             let total = 0;
             for(let item of this.data){
@@ -21,7 +21,7 @@ module.exports = class BookRegister {
                 }
             }
             if (total === 0){
-                throw new Error('nothingfound with given');
+                throw new Error('nothing found with given');
             }
             return total;
         } 
